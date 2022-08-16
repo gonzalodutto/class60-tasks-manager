@@ -7,6 +7,9 @@ const initialState = {
     { id: 2, task: "Buy airco", completed: false },
     { id: 3, task: "Take packages to return", completed: false },
     { id: 4, task: "Order dog food", completed: true },
+    { id: 5, task: "Buy kiwies", completed: false },
+    { id: 6, task: "Do Codaisseur homework", completed: false },
+    { id: 7, task: "Pass Final Assessment", completed: false },
   ],
   showCompletedTasks: false,
 };

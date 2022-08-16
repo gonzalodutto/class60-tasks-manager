@@ -24,20 +24,16 @@ const AddTaskForm = () => {
 
   return (
     <form onSubmit={submit}>
-      <h2>Add a new task</h2>
       <p>
         <label>
-          Task:{" "}
           <input
             type="text"
+            placeholder="Add a new task"
             value={task}
             onChange={(e) => setTask(e.target.value)}
           />
         </label>
-      </p>
-
-      <p>
-        <button type="submit">Add this Task!</button>
+        <button className="favorite-button"> ➕</button>
       </p>
     </form>
   );
