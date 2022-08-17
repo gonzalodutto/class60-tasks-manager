@@ -27,9 +27,14 @@ export const pizzaSlice = createSlice({
       };
       state.tasks.push(newTask);
     },
+    completeTask: (state, action) => {
+      const id = action.payload;
+      state.tasks[id - 1].completed = true;
+    },
+    deleteTask: (state, action) => {},
   },
 });
 
-export const { addTask } = pizzaSlice.actions;
+export const { addTask, completeTask, deleteTask } = pizzaSlice.actions;
 
 export default pizzaSlice.reducer;

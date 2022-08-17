@@ -1,10 +1,13 @@
 import { selectTasks } from "../../store/tasks/selectors";
 import { useSelector } from "react-redux";
 import { AddTaskForm } from "../../components/AddTaskForm";
+import { completeTask } from "../../store/tasks/slice";
+import { useDispatch } from "react-redux";
 import "./styles.css";
 
 const HomePage = () => {
   const tasksInitialState = useSelector(selectTasks);
+  const dispatch = useDispatch();
 
   return (
     <div className="home-page">
@@ -37,7 +40,15 @@ const HomePage = () => {
                   <div key={i} className="task-card">
                     {taskObj.task}{" "}
                     <div>
-                      <button className="favorite-button"> ✅</button>{" "}
+                      <button
+                        className="favorite-button"
+                        onClick={() => {
+                          dispatch(completeTask(taskObj.id));
+                        }}
+                      >
+                        {" "}
+                        ✅
+                      </button>{" "}
                       <button className="favorite-button"> ❌</button>
                     </div>
                   </div>
